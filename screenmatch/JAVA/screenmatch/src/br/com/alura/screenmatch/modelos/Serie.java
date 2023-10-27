@@ -3,19 +3,11 @@ package br.com.alura.screenmatch.modelos;
 import br.alura.screenmatch.calculos.Classificavel;
 
 //Classe filha
-    public class Serie extends Titulo implements Classificavel {
+public class Serie extends Titulo implements Classificavel {
     private int temporadas;
     private int epsPorTemp;
     private boolean ativa;
     private float minPorEp;
-
-    public Serie(int temporadas, int epsPorTemp, boolean ativa, float minPorEp, String nome, int anoDeLancamento, boolean incluidoNoPlano) {
-        super(nome, anoDeLancamento, incluidoNoPlano);
-        this.temporadas = temporadas;
-        this.epsPorTemp = epsPorTemp;
-        this.ativa = ativa;
-        this.minPorEp = minPorEp;
-    }
 
     public int getTemporadas() {
         return temporadas;
@@ -49,9 +41,7 @@ import br.alura.screenmatch.calculos.Classificavel;
         this.minPorEp = minPorEp;
     }
 
-    @Override
-    public void exibeFichaTecnica() {
-        super.exibeFichaTecnica();
+    public void completeSerie(){
         System.out.println("Quantidade de temporadas: " + temporadas);
         System.out.println("Media de minutos por episódio: " + minPorEp);
         System.out.println("Episódio por temporada: " + epsPorTemp);
@@ -68,8 +58,4 @@ import br.alura.screenmatch.calculos.Classificavel;
         return (int) (pegaMedia() / 2) ;
     }
 
-    @Override
-    public String toString() {
-        return "Série: " + this.getNome() + " (" + getAnoDeLancamento() + ")";
-    }
 }
